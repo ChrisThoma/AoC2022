@@ -29,35 +29,35 @@ document.getElementById('file').onchange = function() {
 }
 
 /**
- * A IS ROCK        X IS ROCK
- * B IS PAPER       Y IS PAPER
- * C IS SCISSORS    Z IS SCISSORS
+ * A IS ROCK        X IS LOSE
+ * B IS PAPER       Y IS DRAW
+ * C IS SCISSORS    Z IS WIN
  */
 function getMatchResult(p1Move, p2Move) {
     // rock
     if (p1Move === 'A') {
-        if (p2Move === 'X') { // rock, rock tie
-            return 3 + 1;
-        } else if (p2Move === 'Y') { // rock, paper win
-            return 6 + 2;
-        } else { // rock, scissors lose
+        if (p2Move === 'X') { 
             return 0 + 3;
+        } else if (p2Move === 'Y') { 
+            return 3 + 1;
+        } else { 
+            return 6 + 2;
         }
     } else if (p1Move === 'B') { // paper
-        if (p2Move === 'X') { // paper, rock lose
+        if (p2Move === 'X') { 
             return 0 + 1;
-        } else if (p2Move === 'Y') { // paper, paper tie
+        } else if (p2Move === 'Y') { 
             return 3 + 2;
-        } else { // paper, scissors win
+        } else { 
             return 6 + 3;
         }
     } else { // scissors
-        if (p2Move === 'X') { // scissors, rock win
-            return 6 + 1;
-        } else if (p2Move === 'Y') { // scissors, paper lose
+        if (p2Move === 'X') { 
             return 0 + 2;
-        } else { // scissors, scissors tie
+        } else if (p2Move === 'Y') { 
             return 3 + 3;
+        } else { 
+            return 6 + 1;
         }
     }
 }
