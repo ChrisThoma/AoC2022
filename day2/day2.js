@@ -9,8 +9,8 @@ document.getElementById('file').onchange = function() {
         // $output.innerText = text;
         
         var lines = text.split('\n');
-        let str = ""
-        var totalScore = 0
+        let str = "";
+        var totalScore = 0;
         for (var i = 0; i < lines.length; i++) {
             let line =  lines[i];
             let nums = line.split(' ');
